@@ -10,3 +10,13 @@ exports.create = function(req, res){
 		message: "Got your content"
 	});
 };
+
+exports.index = function(req, res){
+	var template_data;
+	return Template.all().success(function(data){
+		return res.json({
+             template:data
+		});
+	});
+
+}
