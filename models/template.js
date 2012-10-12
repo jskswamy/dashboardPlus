@@ -3,5 +3,5 @@ var Sequelize = require("sequelize"),
 	  sequelize = database.get_sequelize();
 
 Template = sequelize.define("template", {
-	content: Sequelize.STRING
+	content: Sequelize.TEXT
 });

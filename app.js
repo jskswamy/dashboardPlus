@@ -30,7 +30,7 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.post('/template/create', template.create);
+app.post('/template/create', template.findOrCreate);
 app.get('/template/index', template.index);
 
 http.createServer(app).listen(app.get('port'), function(){
