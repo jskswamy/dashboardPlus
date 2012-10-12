@@ -1,5 +1,6 @@
 var database = require("./config/database"),
-	  sequelize = database.get_sequelize();
+    template = require("./models/template"),
+	sequelize = database.get_sequelize();
 
 
 namespace('db', function(){
@@ -12,5 +13,13 @@ namespace('db', function(){
 		.error(function(){
 			console.log("error");
 		});
+	});
+
+	desc("Reset Tables");
+	task("reset", function(params){
+		console.log(params);
+       return sequelize.sync({
+       	force:true
+       });
 	});
 });
