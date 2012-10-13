@@ -21,8 +21,8 @@ exports.findOrCreate = function(req, res){
 
 exports.index = function(req, res){
 	var template_data;
-	return Template.all().success(function(template_data){
-		return res.send(template_data[0].content);	
+	return Template.find(1).success(function(template_data){
+	  return res.send(template_data ? template_data.content : '');	
 	});
 
 }

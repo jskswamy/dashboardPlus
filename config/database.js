@@ -7,6 +7,8 @@ exports.get_sequelize = function() {
 
 function initialize_db() {
   return sequelize = new Sequelize('dashboard', 'root', '', {
-    host: 'localhost'
+    host: 'localhost',
+    dialect: 'sqlite',
+    storage: './db/dashboard.sqlite'
   });
 };

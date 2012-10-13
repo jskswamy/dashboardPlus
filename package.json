@@ -10,6 +10,7 @@
     "sequelize": "*",
     "jade": "*",
     "jake": "*",
-    "supervisor": "*"
+    "supervisor": "*",
+    "sqlite3": "*"
   }
 }
