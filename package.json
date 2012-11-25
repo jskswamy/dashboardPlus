@@ -11,6 +11,7 @@
     "jade": "*",
     "jake": "*",
     "supervisor": "*",
-    "sqlite3": "*"
+    "sqlite3": "*",
+    "socket.io": "*"
   }
 }
