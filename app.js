@@ -30,6 +30,9 @@ app.configure(function(){
   app.use(allowCrossDomain);
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
+  app.use(function(err, req, res, next){
+    res.send(500, 'Something broke!');
+  });
 });
 
 app.configure('development', function(){
@@ -49,7 +52,9 @@ server.listen(app.get('port'), function(){
 
 io.sockets.on('connection', function (socket) {
   socket.on('create', function (data) {
-      socket.broadcast.emit('push', data.content);
       Template.findOrCreate(data.content);
+      socket.broadcast.emit('push', data.content);
+      
+      socket.emit('success_callback', {"status": "Success"});
   });
 });

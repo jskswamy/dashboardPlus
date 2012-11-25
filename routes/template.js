@@ -5,5 +5,4 @@ exports.index = function(req, res) {
 	return Template.find(1).success(function(template_data) {
 		return res.send(template_data ? template_data.content : '');
 	});
-
 }
